@@ -42,8 +42,10 @@
 
 /obj/machinery/computer/cargo/proc/get_export_categories()
 	. = EXPORT_CARGO
-	if(contraband)
-		. |= EXPORT_CONTRABAND
+	if(contraband == TRUE)
+		EXPORT_CONTRABAND = TRUE
+	else
+		EXPORT_CONTRABAND = FALSE
 	if(obj_flags & EMAGGED)
 		. |= EXPORT_EMAG
 

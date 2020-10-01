@@ -489,8 +489,11 @@
 /obj/item/circuitboard/computer/cargo/multitool_act(mob/living/user)
 	. = ..()
 	if(!(obj_flags & EMAGGED))
-		contraband = !contraband
 		to_chat(user, "<span class='notice'>Receiver spectrum set to [contraband ? "Broad" : "Standard"].</span>")
+		if(contraband == FALSE)
+			contraband = TRUE
+		else
+			contraband = FALSE
 	else
 		to_chat(user, "<span class='alert'>The spectrum chip is unresponsive.</span>")
 

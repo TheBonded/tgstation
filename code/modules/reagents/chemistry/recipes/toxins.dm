@@ -28,6 +28,20 @@
 	required_reagents = list(/datum/reagent/toxin/acid/fluacid = 1, /datum/reagent/nitrogen = 1,  /datum/reagent/hydrogen_peroxide = 1)
 	required_temp = 480
 
+/datum/chemical_reaction/fluantiacid
+	results = list(/datum/reagent/toxin/acid/fluantiacid = 1)
+	required_reagents = list(/datum/reagent/toxin/acid/fluoacid = 1, /datum/reagent/toxin/acid/antiacid = 1)
+
+/datum/chemical_reaction/fluoacid
+	results = list(/datum/reagent/toxin/acid/fluoacid = 2)
+	required_reagents = list(/datum/reagent/fluorine = 1, /datum/reagent/hydrogen = 1)
+	required_temp = 480
+
+/datum/chemical_reaction/antiacid
+	results = list(/datum/reagent/toxin/acid/antiacid = 6) //technecally not an acid but it was added specifically for the creation of one
+	required_reagents = list(/datum/reagent/antimony = 1, /datum/reagent/fluorine = 5)
+	required_temp = 480
+
 /datum/chemical_reaction/sulfonal
 	results = list(/datum/reagent/toxin/sulfonal = 3)
 	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/diethylamine = 1, /datum/reagent/sulfur = 1)

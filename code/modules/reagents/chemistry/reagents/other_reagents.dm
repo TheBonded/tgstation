@@ -864,6 +864,13 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "salty metal"
 
+/datum/reagent/antimony
+	name = "Antimony"
+	description = "A silvery metal."
+	reagent_state = SOLID
+	color = "#808080" // rgb: 128, 128, 128
+	taste_description = "metal"
+
 /datum/reagent/phosphorus
 	name = "Phosphorus"
 	description = "A ruddy red powder that burns readily. Though it comes in many colors, the general theme is always the same."

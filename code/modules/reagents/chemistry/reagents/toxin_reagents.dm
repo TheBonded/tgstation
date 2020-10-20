@@ -674,10 +674,20 @@
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 0.5
 
+
 /datum/reagent/toxin/sulfonal/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 22)
 		M.Sleeping(40)
 	return ..()
+
+/datum/reagent/toxin/acid/antiacid //I know this is not an acid but I fucked up in the chemical recipe and it shouldn't be too bad of an problem
+	name = "Antimony fluoride"
+	description = "A weak stealthy poison that deals minor toxin damage. Generally harmless."
+	silent_toxin = TRUE
+	reagent_state = LIQUID
+	color = "#7DC3A0"
+	metabolization_rate = 0.125 * REAGENTS_METABOLISM
+	toxpwr = 0.25
 
 /datum/reagent/toxin/amanitin
 	name = "Amanitin"
@@ -893,6 +903,20 @@
 	M.adjustFireLoss(volume/10, FALSE) //here you go nervar
 	. = TRUE
 	..()
+
+/datum/reagent/toxin/acid/fluoacid
+	name = "Hydrofluoric acid"
+	description = "An acid with the chemical compound HF."
+	color = "#5050FF"
+	toxpwr = 1
+	acidpwr = 1.0
+
+/datum/reagent/toxin/acid/fluoacid/on_mob_life(mob/living/carbon/M)
+	M.adjustFireLoss(volume/10, FALSE) //here you go nervar
+	. = TRUE
+	..()
+
+
 
 /datum/reagent/toxin/delayed
 	name = "Toxin Microcapsules"

@@ -70,7 +70,7 @@
 			if(target.cartridge.access & CART_MANIFEST)
 				difficulty++ //if cartridge has manifest access it has extra snowflake difficulty
 			else
-				difficulty += 2
+				difficulty += 0
 		if(SEND_SIGNAL(target, COMSIG_PDA_CHECK_DETONATE) & COMPONENT_PDA_NO_DETONATE || prob(difficulty * 15))
 			U.show_message("<span class='danger'>An error flashes on your [src].</span>", MSG_VISUAL)
 		else

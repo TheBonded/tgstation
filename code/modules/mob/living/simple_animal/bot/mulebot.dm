@@ -726,10 +726,11 @@
 // called from mob/living/carbon/human/Crossed()
 // when mulebot is in the same loc
 /mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/human/H)
-	log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")
-	H.visible_message("<span class='danger'>[src] drives over [H]!</span>", \
-					"<span class='userdanger'>[src] drives over you!</span>")
-	playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
+	if(wires.is_cut(WIRE_AVOIDANCE)) // so pAI controlled mulebots don't accidentally run people over.
+		log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")
+		H.visible_message("<span class='danger'>[src] drives over [H]!</span>", \
+						"<span class='userdanger'>[src] drives over you!</span>")
+		playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 
 	var/damage = rand(5,15)
 	H.apply_damage(2*damage, BRUTE, BODY_ZONE_HEAD, run_armor_check(BODY_ZONE_HEAD, MELEE))
